@@ -1,13 +1,16 @@
 name: First WorkFlow
-on: 
-  workflow_dispatch:
+on: push
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Greeting
-        run: echo "Hello World"
-      - name: Print GoodBye
-        run: |
-            echo "Done - Bye 1!"
-            echo "Done - Bye 2!"
+      - name: Get Code 
+        uses: actions/checkout@v3
+      - name: Install Node Js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm test
