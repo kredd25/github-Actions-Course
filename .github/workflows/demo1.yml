@@ -1,5 +1,5 @@
-name: Events Demo 
-on: 
+name: Events Demo
+on:
   pull_request:
     branches:
       - ["main"]
