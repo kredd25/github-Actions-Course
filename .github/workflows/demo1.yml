@@ -1,13 +1,13 @@
 name: Events Demo
 on:
   pull_request:
-    branches:
-      - ["main"]
     types:
-      - [opened]
+      - opened
+    branches:
+      - main
   push:
     branches: 
-      - ["main"]
+      - main
   workflow_dispatch:
 jobs:
   deploy:
